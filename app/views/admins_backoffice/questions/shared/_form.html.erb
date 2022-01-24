@@ -25,8 +25,7 @@
 
     <div class="form-group">
       <%= form.label :topic_id %>
-      <%# AQUIIIIIIIIIIIII %>
-      <%= form.collection_select(:topic_id, Topic.all, :id, :description, {}, { class: "form-control" }) %>
+      <%= form.collection_select(:topic_id, @topics, :id, :description, {}, { class: "form-control" }) %>
     </div>
 
     <%# Checkbox %>
