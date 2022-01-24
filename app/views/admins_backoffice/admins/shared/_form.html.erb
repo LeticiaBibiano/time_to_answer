@@ -1,0 +1,46 @@
+<h1><%= action_message %> Administrador</h1>
+
+<%# checks for errors and displays the message %>
+<% if @admin.errors.any? %>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <ul>
+      <% @admin.errors.full_messages.each do |msg|%>
+        <li> <%= msg %> </li>
+      <% end %>
+    </ul>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+
+  <%# Rails form, local: true to HTML (default is JS) %>
+  <%= form_with(model: [ :admins_backoffice, @admin], local: true) do |form| %>
+
+    <div class="form-group">
+      <%= form.label :email %>
+      <%# Input on Rails %>
+      <%= form.text_field :email, class:"form-control", placeholder:"Digite o novo email..." %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :password %>
+      <%# Input on Rails %>
+      <%= form.password_field :password, class:"form-control", placeholder:"Digite a nova senha..." %>
+    </div>
+
+    <div class="form-group">
+      <%# Devise fields! %>
+      <%= form.label :password_confirmation %>
+      <%# Input on Rails %>
+      <%= form.password_field :password_confirmation, class:"form-control", placeholder:"Digite a nova senha..." %>
+    </div>
+
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Confirme as alterações aqui!</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+
+  <% end %>
+  

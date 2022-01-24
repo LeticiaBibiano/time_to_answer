@@ -1,0 +1,6 @@
+import "jquery-2.2.4/dist/jquery.jsist/jquery"
+import "bootstrap/scss/bootstrap"
+import "fastclick/lib/fastclick"
+import "nprogress/nprogress"
+import "malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar"
+import "./gentelella.js"

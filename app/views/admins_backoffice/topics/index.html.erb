@@ -1,0 +1,43 @@
+<h1>Lista de Tópicos/Assuntos</h1>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th><%= translate_method(@topics, :description) %></th>
+        <%# add topic button %>
+        <th>
+          <%= link_to new_admins_backoffice_topic_path, class:"btn btn-outline-success btn-circle" do %>  
+            <i class="fa fa-plus"></i>
+          <% end %>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @topics.each do |tpc|%>
+      <tr>
+        <td><%= tpc.id %></td>
+        <td><%= tpc.description %></td>
+        <td style="width: 150px">
+          <%# edit button %>
+          <%= link_to edit_admins_backoffice_topic_path(tpc), class:"btn btn-primary btn-circle" do %>  
+            <i class="fa fa-edit"></i>
+          <% end %>
+          <%# delete button %>
+          <%= link_to admins_backoffice_topic_path(tpc), method: :delete, class:"btn btn-outline-danger btn-circle", data: { confirm: "Quer mesmo apagar esse tópico/assunto?"} do %>  
+            <i class="fa fa-close"></i>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+  <div class="text-center">
+    <%= paginate @topics %>
+  </div>
+  
+</div>
+

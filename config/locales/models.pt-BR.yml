@@ -1,0 +1,31 @@
+'pt-BR':
+  activerecord:
+    models:
+      admin: 
+        one: Administrador          
+        other: Administradores 
+      user: 
+        one: Usuário          
+        other: Usuários
+      topic:
+        one: Tópico/Assunto
+        other: Tópicos/Assuntos
+      question:
+        one: Pergunta
+        other: Perguntas
+    attributes:
+      admin:
+        id: Código
+        password: Senha
+        password_confirmation: Confirme a Senha
+      user: 
+        id: Código
+      topic:
+        id: Código
+        description: Descrição
+      question:
+        id: Código
+        description: Descrição
+        topic: Tópico/Assunto
+        topic_id: Tópic/Assunto
+        
