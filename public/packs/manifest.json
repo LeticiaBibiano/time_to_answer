@@ -1,15 +1,15 @@
 {
-  "admins_backoffice.js": "/packs/js/admins_backoffice-81f9b777c517b2052741.js",
-  "admins_backoffice.js.map": "/packs/js/admins_backoffice-81f9b777c517b2052741.js.map",
+  "admins_backoffice.js": "/packs/js/admins_backoffice-ff199b7f2ef59c11cae3.js",
+  "admins_backoffice.js.map": "/packs/js/admins_backoffice-ff199b7f2ef59c11cae3.js.map",
   "application.js": "/packs/js/application-bbe76d74a8d0cec34603.js",
   "application.js.map": "/packs/js/application-bbe76d74a8d0cec34603.js.map",
   "entrypoints": {
     "admins_backoffice": {
       "js": [
-        "/packs/js/admins_backoffice-81f9b777c517b2052741.js"
+        "/packs/js/admins_backoffice-ff199b7f2ef59c11cae3.js"
       ],
       "js.map": [
-        "/packs/js/admins_backoffice-81f9b777c517b2052741.js.map"
+        "/packs/js/admins_backoffice-ff199b7f2ef59c11cae3.js.map"
       ]
     },
     "application": {
