@@ -20385,3 +20385,1902 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 24ms (Views: 20.0ms | ActiveRecord: 0.0ms | Allocations: 15544)
 
 
+Started GET "/" for ::1 at 2022-01-26 10:59:47 -0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Site::WelcomeController#index as HTML
+  Rendering layout layouts/site.html.erb
+  Rendering site/welcome/index.html.erb within layouts/site
+  Rendered site/welcome/index.html.erb within layouts/site (Duration: 8.3ms | Allocations: 1043)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/site.html.erb (Duration: 150.2ms | Allocations: 50186)
+Completed 200 OK in 165ms (Views: 154.4ms | ActiveRecord: 0.0ms | Allocations: 52854)
+
+
+Started GET "/" for ::1 at 2022-01-26 10:59:47 -0300
+Processing by Site::WelcomeController#index as HTML
+  Rendering layout layouts/site.html.erb
+  Rendering site/welcome/index.html.erb within layouts/site
+  Rendered site/welcome/index.html.erb within layouts/site (Duration: 0.5ms | Allocations: 288)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/site.html.erb (Duration: 11.1ms | Allocations: 10774)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 11014)
+
+
+Started GET "/admins_backoffice/welcome/index" for ::1 at 2022-01-26 10:59:54 -0300
+Processing by AdminsBackoffice::WelcomeController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 1000)
+
+
+Started GET "/admins/sign_in" for ::1 at 2022-01-26 10:59:54 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/shared/_links.html.erb (Duration: 2.1ms | Allocations: 649)
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 12.4ms | Allocations: 2820)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 25.9ms | Allocations: 13474)
+Completed 200 OK in 45ms (Views: 28.8ms | ActiveRecord: 1.1ms | Allocations: 19652)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 10:59:56 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admins_backoffice/welcome/index
+Completed 302 Found in 254ms (ActiveRecord: 0.4ms | Allocations: 5438)
+
+
+Started GET "/admins_backoffice/welcome/index" for ::1 at 2022-01-26 10:59:56 -0300
+Processing by AdminsBackoffice::WelcomeController#index as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/welcome/index.html.erb within layouts/admins_backoffice
+  Rendered admins_backoffice/welcome/index.html.erb within layouts/admins_backoffice (Duration: 1.4ms | Allocations: 187)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 26.2ms | Allocations: 15513)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.2ms | Allocations: 17396)
+
+
+Started GET "/admins_backoffice/questions" for ::1 at 2022-01-26 11:00:00 -0300
+Processing by AdminsBackoffice::QuestionsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/index.html.erb within layouts/admins_backoffice
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."description" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[36mTopic Load (1.0ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 8], ["id", 18], ["id", 7], ["id", 17], ["id", 19]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/admins_backoffice/questions/index.html.erb:41
+  Rendered admins_backoffice/questions/index.html.erb within layouts/admins_backoffice (Duration: 30.6ms | Allocations: 12808)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 44.5ms | Allocations: 26961)
+Completed 200 OK in 57ms (Views: 42.7ms | ActiveRecord: 2.7ms | Allocations: 30861)
+
+
+Started GET "/admins_backoffice/questions/new" for ::1 at 2022-01-26 11:00:03 -0300
+Processing by AdminsBackoffice::QuestionsController#new as HTML
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/new.html.erb within layouts/admins_backoffice
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/admins_backoffice/questions/shared/_form.html.erb:28
+  Rendered admins_backoffice/questions/_answer_fields.html.erb (Duration: 2.5ms | Allocations: 661)
+  Rendered admins_backoffice/questions/shared/_form.html.erb (Duration: 28.1ms | Allocations: 9076)
+  Rendered admins_backoffice/questions/new.html.erb within layouts/admins_backoffice (Duration: 32.0ms | Allocations: 9400)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 61.7ms | Allocations: 23549)
+Completed 200 OK in 71ms (Views: 61.9ms | ActiveRecord: 1.4ms | Allocations: 25183)
+
+
+Started POST "/admins_backoffice/questions" for ::1 at 2022-01-26 11:00:12 -0300
+Processing by AdminsBackoffice::QuestionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "question"=>{"description"=>"", "topic_id"=>"4", "answers_attributes"=>{"1643205605086"=>{"description"=>"jsjasj", "correct"=>"0", "_destroy"=>"false"}, "1643205607701"=>{"description"=>"", "correct"=>"0", "_destroy"=>"false"}}}}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :answers_attributes[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+  [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+  [1m[36mQuestion Create (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("description", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["description", ""], ["topic_id", 4], ["created_at", "2022-01-26 14:00:12.692991"], ["updated_at", "2022-01-26 14:00:12.692991"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+Redirected to http://localhost:3000/admins_backoffice/questions
+Completed 302 Found in 30ms (ActiveRecord: 6.2ms | Allocations: 7281)
+
+
+Started GET "/admins_backoffice/questions" for ::1 at 2022-01-26 11:00:12 -0300
+Processing by AdminsBackoffice::QuestionsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/index.html.erb within layouts/admins_backoffice
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."description" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 4], ["id", 8], ["id", 18], ["id", 7], ["id", 17]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/admins_backoffice/questions/index.html.erb:41
+  Rendered admins_backoffice/questions/index.html.erb within layouts/admins_backoffice (Duration: 15.0ms | Allocations: 6055)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 27.6ms | Allocations: 20324)
+Completed 200 OK in 30ms (Views: 27.6ms | ActiveRecord: 0.6ms | Allocations: 21917)
+
+
+Started GET "/admins_backoffice/questions/8/edit" for ::1 at 2022-01-26 11:00:29 -0300
+Processing by AdminsBackoffice::QuestionsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:51:in `set_question_id'
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/edit.html.erb within layouts/admins_backoffice
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/admins_backoffice/questions/shared/_form.html.erb:28
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 8]]
+  ↳ app/views/admins_backoffice/questions/shared/_form.html.erb:32
+  Rendered admins_backoffice/questions/_answer_fields.html.erb (Duration: 0.7ms | Allocations: 346)
+  Rendered admins_backoffice/questions/shared/_form.html.erb (Duration: 10.6ms | Allocations: 3433)
+  Rendered admins_backoffice/questions/edit.html.erb within layouts/admins_backoffice (Duration: 17.4ms | Allocations: 3625)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 31.6ms | Allocations: 17873)
+Completed 200 OK in 38ms (Views: 32.3ms | ActiveRecord: 0.8ms | Allocations: 20164)
+
+
+Started PATCH "/admins_backoffice/questions/8" for ::1 at 2022-01-26 11:01:39 -0300
+Processing by AdminsBackoffice::QuestionsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "question"=>{"description"=>"", "topic_id"=>"4"}, "id"=>"8"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:51:in `set_question_id'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+Redirected to http://localhost:3000/admins_backoffice/questions
+Completed 302 Found in 22ms (ActiveRecord: 1.1ms | Allocations: 4497)
+
+
+Started GET "/admins_backoffice/questions" for ::1 at 2022-01-26 11:01:39 -0300
+Processing by AdminsBackoffice::QuestionsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/index.html.erb within layouts/admins_backoffice
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."description" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 4], ["id", 8], ["id", 18], ["id", 7], ["id", 17]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/admins_backoffice/questions/index.html.erb:41
+  Rendered admins_backoffice/questions/index.html.erb within layouts/admins_backoffice (Duration: 8.6ms | Allocations: 4368)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 22.6ms | Allocations: 18626)
+Completed 200 OK in 27ms (Views: 22.6ms | ActiveRecord: 0.7ms | Allocations: 20217)
+
+
+Started GET "/admins_backoffice/questions?page=2" for ::1 at 2022-01-26 11:01:42 -0300
+Processing by AdminsBackoffice::QuestionsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/index.html.erb within layouts/admins_backoffice
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."description" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 5]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ?[0m  [["id", 19]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  Rendered admins_backoffice/questions/index.html.erb within layouts/admins_backoffice (Duration: 15.6ms | Allocations: 3677)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 29.9ms | Allocations: 17925)
+Completed 200 OK in 37ms (Views: 29.7ms | ActiveRecord: 1.1ms | Allocations: 19503)
+
+
+Started GET "/admins_backoffice/questions" for ::1 at 2022-01-26 11:01:43 -0300
+Processing by AdminsBackoffice::QuestionsController#index as HTML
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/index.html.erb within layouts/admins_backoffice
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."description" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 4], ["id", 8], ["id", 18], ["id", 7], ["id", 17]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/admins_backoffice/questions/index.html.erb:41
+  Rendered admins_backoffice/questions/index.html.erb within layouts/admins_backoffice (Duration: 17.8ms | Allocations: 4365)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 33.7ms | Allocations: 18601)
+Completed 200 OK in 41ms (Views: 33.5ms | ActiveRecord: 1.3ms | Allocations: 20183)
+
+
+Started GET "/admins_backoffice/questions/new" for ::1 at 2022-01-26 11:01:45 -0300
+Processing by AdminsBackoffice::QuestionsController#new as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/new.html.erb within layouts/admins_backoffice
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/admins_backoffice/questions/shared/_form.html.erb:28
+  Rendered admins_backoffice/questions/_answer_fields.html.erb (Duration: 1.3ms | Allocations: 345)
+  Rendered admins_backoffice/questions/shared/_form.html.erb (Duration: 10.8ms | Allocations: 2489)
+  Rendered admins_backoffice/questions/new.html.erb within layouts/admins_backoffice (Duration: 11.1ms | Allocations: 2592)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 26.0ms | Allocations: 16829)
+Completed 200 OK in 33ms (Views: 28.0ms | ActiveRecord: 0.5ms | Allocations: 18324)
+
+
+Started POST "/admins_backoffice/questions" for ::1 at 2022-01-26 11:01:48 -0300
+Processing by AdminsBackoffice::QuestionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "question"=>{"description"=>"", "topic_id"=>"20"}}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+  [1m[36mQuestion Create (1.0ms)[0m  [1m[32mINSERT INTO "questions" ("description", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["description", ""], ["topic_id", 20], ["created_at", "2022-01-26 14:01:48.966021"], ["updated_at", "2022-01-26 14:01:48.966021"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+Redirected to http://localhost:3000/admins_backoffice/questions
+Completed 302 Found in 33ms (ActiveRecord: 9.4ms | Allocations: 6815)
+
+
+Started GET "/admins_backoffice/questions" for ::1 at 2022-01-26 11:01:49 -0300
+Processing by AdminsBackoffice::QuestionsController#index as HTML
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/index.html.erb within layouts/admins_backoffice
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."description" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 4], ["id", 20], ["id", 8], ["id", 18], ["id", 7]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/admins_backoffice/questions/index.html.erb:41
+  Rendered admins_backoffice/questions/index.html.erb within layouts/admins_backoffice (Duration: 9.7ms | Allocations: 4363)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 23.0ms | Allocations: 18620)
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 1.5ms | Allocations: 20212)
+
+
+Started DELETE "/admins_backoffice/questions/9" for ::1 at 2022-01-26 11:01:58 -0300
+Processing by AdminsBackoffice::QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"9"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:51:in `set_question_id'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:36:in `destroy'
+  [1m[36mQuestion Destroy (3.8ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:36:in `destroy'
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:36:in `destroy'
+Redirected to http://localhost:3000/admins_backoffice/questions
+Completed 302 Found in 25ms (ActiveRecord: 8.9ms | Allocations: 5948)
+
+
+Started GET "/admins_backoffice/questions" for ::1 at 2022-01-26 11:01:58 -0300
+Processing by AdminsBackoffice::QuestionsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/index.html.erb within layouts/admins_backoffice
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."description" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 4], ["id", 8], ["id", 18], ["id", 7], ["id", 17]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/admins_backoffice/questions/index.html.erb:41
+  Rendered admins_backoffice/questions/index.html.erb within layouts/admins_backoffice (Duration: 10.3ms | Allocations: 4359)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 22.0ms | Allocations: 18614)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 0.6ms | Allocations: 20202)
+
+
+Started DELETE "/admins_backoffice/questions/8" for ::1 at 2022-01-26 11:02:00 -0300
+Processing by AdminsBackoffice::QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"8"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:51:in `set_question_id'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:36:in `destroy'
+  [1m[36mQuestion Destroy (0.3ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:36:in `destroy'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:36:in `destroy'
+Redirected to http://localhost:3000/admins_backoffice/questions
+Completed 302 Found in 20ms (ActiveRecord: 6.6ms | Allocations: 5929)
+
+
+Started GET "/admins_backoffice/questions" for ::1 at 2022-01-26 11:02:00 -0300
+Processing by AdminsBackoffice::QuestionsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/index.html.erb within layouts/admins_backoffice
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."description" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 8], ["id", 18], ["id", 7], ["id", 17], ["id", 19]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/admins_backoffice/questions/index.html.erb:41
+  Rendered admins_backoffice/questions/index.html.erb within layouts/admins_backoffice (Duration: 8.3ms | Allocations: 3235)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 22.2ms | Allocations: 17491)
+Completed 200 OK in 25ms (Views: 22.1ms | ActiveRecord: 0.9ms | Allocations: 19079)
+
+
+Started GET "/admins_backoffice/questions/new" for ::1 at 2022-01-26 11:28:56 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminsBackoffice::QuestionsController#new as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/new.html.erb within layouts/admins_backoffice
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/admins_backoffice/questions/shared/_form.html.erb:28
+  Rendered admins_backoffice/questions/_answer_fields.html.erb (Duration: 1.5ms | Allocations: 981)
+  Rendered admins_backoffice/questions/shared/_form.html.erb (Duration: 128.8ms | Allocations: 420676)
+  Rendered admins_backoffice/questions/new.html.erb within layouts/admins_backoffice (Duration: 129.7ms | Allocations: 421265)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 497bf234dde06ead218d
+Version: webpack 4.46.0
+Time: 5878ms
+Built at: 01/26/2022 11:29:04 AM
+                                           Asset      Size             Chunks                         Chunk Names
+    js/admins_backoffice-292f5baa0a125a2878e5.js   655 KiB  admins_backoffice  [emitted] [immutable]  admins_backoffice
+js/admins_backoffice-292f5baa0a125a2878e5.js.map   678 KiB  admins_backoffice  [emitted] [dev]        admins_backoffice
+          js/application-bbe76d74a8d0cec34603.js  1.06 MiB        application  [emitted] [immutable]  application
+      js/application-bbe76d74a8d0cec34603.js.map  1.12 MiB        application  [emitted] [dev]        application
+           js/gentelella-16bbbaae7af6d01b340c.js   530 KiB         gentelella  [emitted] [immutable]  gentelella
+       js/gentelella-16bbbaae7af6d01b340c.js.map   575 KiB         gentelella  [emitted] [dev]        gentelella
+           js/sb-admin-2-789398bed6fb1d11074e.js   415 KiB         sb-admin-2  [emitted] [immutable]  sb-admin-2
+       js/sb-admin-2-789398bed6fb1d11074e.js.map   399 KiB         sb-admin-2  [emitted] [dev]        sb-admin-2
+     js/users_backoffice-ce803c0d43e4bce2c5c0.js  1.35 MiB   users_backoffice  [emitted] [immutable]  users_backoffice
+ js/users_backoffice-ce803c0d43e4bce2c5c0.js.map  1.45 MiB   users_backoffice  [emitted] [dev]        users_backoffice
+                                   manifest.json  1.74 KiB                     [emitted]              
+Entrypoint admins_backoffice = js/admins_backoffice-292f5baa0a125a2878e5.js js/admins_backoffice-292f5baa0a125a2878e5.js.map
+Entrypoint application = js/application-bbe76d74a8d0cec34603.js js/application-bbe76d74a8d0cec34603.js.map
+Entrypoint gentelella = js/gentelella-16bbbaae7af6d01b340c.js js/gentelella-16bbbaae7af6d01b340c.js.map
+Entrypoint sb-admin-2 = js/sb-admin-2-789398bed6fb1d11074e.js js/sb-admin-2-789398bed6fb1d11074e.js.map
+Entrypoint users_backoffice = js/users_backoffice-ce803c0d43e4bce2c5c0.js js/users_backoffice-ce803c0d43e4bce2c5c0.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/admins_backoffice.js] 178 bytes {admins_backoffice} [built]
+[./app/javascript/packs/application.js] 575 bytes {application} [built]
+[./app/javascript/packs/gentelella.js] 116 KiB {gentelella} {users_backoffice} [built]
+[./app/javascript/packs/sb-admin-2.js] 1.75 KiB {sb-admin-2} {admins_backoffice} [built]
+[./app/javascript/packs/users_backoffice.js] 237 bytes {users_backoffice} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {users_backoffice} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {admins_backoffice} {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 123 hidden modules
+
+ERROR in ./app/javascript/packs/users_backoffice.js
+Module not found: Error: Can't resolve 'jquery-2.2.4/dist/jquery.jsist/jquery' in '/home/bibiano/Documents/Kazap_curso_Ruby/ruby_on_rails/time_to_answer/app/javascript/packs'
+ @ ./app/javascript/packs/users_backoffice.js 1:0-47
+
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacer, 2) or calc($spacer / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+302 │ $headings-margin-bottom:      $spacer / 2 !default;
+    │                               ^^^^^^^^^^^
+    ╵
+    node_modules/bootstrap/scss/_variables.scss 302:31  @import
+    node_modules/bootstrap/scss/bootstrap.scss 9:9      root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($input-padding-y, 2) or calc($input-padding-y / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+498 │ $input-height-inner-quarter:            add($input-line-height * .25em, $input-padding-y / 2) !default;
+    │                                                                         ^^^^^^^^^^^^^^^^^^^^
+    ╵
+    node_modules/bootstrap/scss/_variables.scss 498:73  @import
+    node_modules/bootstrap/scss/bootstrap.scss 9:9      root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($custom-control-indicator-size, 2) or calc($custom-control-indicator-size / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+568 │ $custom-switch-indicator-border-radius:         $custom-control-indicator-size / 2 !default;
+    │                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ╵
+    node_modules/bootstrap/scss/_variables.scss 568:49  @import
+    node_modules/bootstrap/scss/bootstrap.scss 9:9      root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacer, 2) or calc($spacer / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+713 │ $nav-divider-margin-y:              $spacer / 2 !default;
+    │                                     ^^^^^^^^^^^
+    ╵
+    node_modules/bootstrap/scss/_variables.scss 713:37  @import
+    node_modules/bootstrap/scss/bootstrap.scss 9:9      root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacer, 2) or calc($spacer / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+718 │ $navbar-padding-y:                  $spacer / 2 !default;
+    │                                     ^^^^^^^^^^^
+    ╵
+    node_modules/bootstrap/scss/_variables.scss 718:37  @import
+    node_modules/bootstrap/scss/bootstrap.scss 9:9      root stylesheet
+
+WARNING: 64 repetitive deprecation warnings omitted.
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(20em, 16) or calc(20em / 16)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+   ╷
+12 │ $fa-fw-width:          (20em / 16);
+   │                         ^^^^^^^^^
+   ╵
+    node_modules/@fortawesome/fontawesome-free/scss/_variables.scss 12:25  @import
+    node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss 5:9   root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(4em, 3) or calc(4em / 3)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ╷
+6 │   font-size: (4em / 3);
+  │               ^^^^^^^
+  ╵
+    node_modules/@fortawesome/fontawesome-free/scss/_larger.scss 6:15     @import
+    node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss 8:9  root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(3em, 4) or calc(3em / 4)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ╷
+7 │   line-height: (3em / 4);
+  │                 ^^^^^^^
+  ╵
+    node_modules/@fortawesome/fontawesome-free/scss/_larger.scss 7:17     @import
+    node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss 8:9  root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($fa-li-width * 5, 4) or calc($fa-li-width * 5 / 4)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ╷
+6 │   margin-left: $fa-li-width * 5/4;
+  │                ^^^^^^^^^^^^^^^^^^
+  ╵
+    node_modules/@fortawesome/fontawesome-free/scss/_list.scss 6:16        @import
+    node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss 10:9  root stylesheet
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 8221.2ms | Allocations: 472605)
+Completed 200 OK in 8259ms (Views: 8221.8ms | ActiveRecord: 2.4ms | Allocations: 490452)
+
+
+Started POST "/admins_backoffice/questions" for ::1 at 2022-01-26 11:29:07 -0300
+Processing by AdminsBackoffice::QuestionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "question"=>{"description"=>"", "topic_id"=>"4"}}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+  [1m[36mQuestion Create (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("description", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["description", ""], ["topic_id", 4], ["created_at", "2022-01-26 14:29:07.551859"], ["updated_at", "2022-01-26 14:29:07.551859"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+Redirected to http://localhost:3000/admins_backoffice/questions
+Completed 302 Found in 30ms (ActiveRecord: 6.8ms | Allocations: 8442)
+
+
+Started GET "/admins_backoffice/questions" for ::1 at 2022-01-26 11:29:07 -0300
+Processing by AdminsBackoffice::QuestionsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/index.html.erb within layouts/admins_backoffice
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."description" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 4], ["id", 8], ["id", 18], ["id", 7], ["id", 17]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/admins_backoffice/questions/index.html.erb:41
+  Rendered admins_backoffice/questions/index.html.erb within layouts/admins_backoffice (Duration: 15.5ms | Allocations: 7682)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 29.0ms | Allocations: 21956)
+Completed 200 OK in 33ms (Views: 28.9ms | ActiveRecord: 0.7ms | Allocations: 23753)
+
+
+Started DELETE "/admins_backoffice/questions/10" for ::1 at 2022-01-26 11:29:11 -0300
+Processing by AdminsBackoffice::QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"10"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:51:in `set_question_id'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:36:in `destroy'
+  [1m[36mQuestion Destroy (0.6ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:36:in `destroy'
+  [1m[36mTRANSACTION (18.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:36:in `destroy'
+Redirected to http://localhost:3000/admins_backoffice/questions
+Completed 302 Found in 35ms (ActiveRecord: 20.1ms | Allocations: 6058)
+
+
+Started GET "/admins_backoffice/questions" for ::1 at 2022-01-26 11:29:11 -0300
+Processing by AdminsBackoffice::QuestionsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/index.html.erb within layouts/admins_backoffice
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."description" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 8], ["id", 18], ["id", 7], ["id", 17], ["id", 19]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/admins_backoffice/questions/index.html.erb:41
+  Rendered admins_backoffice/questions/index.html.erb within layouts/admins_backoffice (Duration: 8.0ms | Allocations: 3240)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 20.8ms | Allocations: 17496)
+Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 0.8ms | Allocations: 19088)
+
+
+Started GET "/admins_backoffice/questions/new" for ::1 at 2022-01-26 11:29:12 -0300
+Processing by AdminsBackoffice::QuestionsController#new as HTML
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/new.html.erb within layouts/admins_backoffice
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/admins_backoffice/questions/shared/_form.html.erb:28
+  Rendered admins_backoffice/questions/_answer_fields.html.erb (Duration: 0.9ms | Allocations: 345)
+  Rendered admins_backoffice/questions/shared/_form.html.erb (Duration: 8.2ms | Allocations: 2491)
+  Rendered admins_backoffice/questions/new.html.erb within layouts/admins_backoffice (Duration: 8.6ms | Allocations: 2594)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 24.0ms | Allocations: 16832)
+Completed 200 OK in 37ms (Views: 29.6ms | ActiveRecord: 1.3ms | Allocations: 18347)
+
+
+Started POST "/admins_backoffice/questions" for ::1 at 2022-01-26 11:29:32 -0300
+Processing by AdminsBackoffice::QuestionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "question"=>{"description"=>"Kikikiki", "topic_id"=>"21", "answers_attributes"=>{"1643207362971"=>{"description"=>"ANite", "correct"=>"1", "_destroy"=>"false"}, "1643207366676"=>{"description"=>"Beyonce", "correct"=>"0", "_destroy"=>"false"}}}}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+  [1m[36mQuestion Create (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("description", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["description", "Kikikiki"], ["topic_id", 21], ["created_at", "2022-01-26 14:29:32.641220"], ["updated_at", "2022-01-26 14:29:32.641220"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+  [1m[36mAnswer Create (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "description", "correct", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 11], ["description", "ANite"], ["correct", 1], ["created_at", "2022-01-26 14:29:32.647945"], ["updated_at", "2022-01-26 14:29:32.647945"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 11], ["description", "Beyonce"], ["created_at", "2022-01-26 14:29:32.652474"], ["updated_at", "2022-01-26 14:29:32.652474"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:17:in `create'
+Redirected to http://localhost:3000/admins_backoffice/questions
+Completed 302 Found in 46ms (ActiveRecord: 8.0ms | Allocations: 9921)
+
+
+Started GET "/admins_backoffice/questions" for ::1 at 2022-01-26 11:29:32 -0300
+Processing by AdminsBackoffice::QuestionsController#index as HTML
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/index.html.erb within layouts/admins_backoffice
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."description" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 21], ["id", 8], ["id", 18], ["id", 7], ["id", 17]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/admins_backoffice/questions/index.html.erb:41
+  Rendered admins_backoffice/questions/index.html.erb within layouts/admins_backoffice (Duration: 11.1ms | Allocations: 4363)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 31.7ms | Allocations: 18620)
+Completed 200 OK in 38ms (Views: 33.7ms | ActiveRecord: 0.8ms | Allocations: 20208)
+
+
+Started GET "/admins_backoffice/questions/11/edit" for ::1 at 2022-01-26 11:29:34 -0300
+Processing by AdminsBackoffice::QuestionsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:51:in `set_question_id'
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/edit.html.erb within layouts/admins_backoffice
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/admins_backoffice/questions/shared/_form.html.erb:28
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 11]]
+  ↳ app/views/admins_backoffice/questions/shared/_form.html.erb:32
+  Rendered admins_backoffice/questions/_answer_fields.html.erb (Duration: 0.9ms | Allocations: 510)
+  Rendered admins_backoffice/questions/_answer_fields.html.erb (Duration: 1.1ms | Allocations: 354)
+  Rendered admins_backoffice/questions/_answer_fields.html.erb (Duration: 1.3ms | Allocations: 342)
+  Rendered admins_backoffice/questions/shared/_form.html.erb (Duration: 16.6ms | Allocations: 4647)
+  Rendered admins_backoffice/questions/edit.html.erb within layouts/admins_backoffice (Duration: 17.2ms | Allocations: 4839)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 41.0ms | Allocations: 19088)
+Completed 200 OK in 52ms (Views: 42.6ms | ActiveRecord: 0.8ms | Allocations: 21270)
+
+
+Started PATCH "/admins_backoffice/questions/11" for ::1 at 2022-01-26 11:29:48 -0300
+Processing by AdminsBackoffice::QuestionsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "question"=>{"description"=>"Kikikiki", "topic_id"=>"21", "answers_attributes"=>{"0"=>{"description"=>"ANite", "correct"=>"1", "_destroy"=>"false", "id"=>"1"}, "1"=>{"description"=>"Beyonce", "correct"=>"0", "_destroy"=>"false", "id"=>"2"}}}, "id"=>"11"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:51:in `set_question_id'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."id" IN (?, ?)[0m  [["question_id", 11], ["id", 1], ["id", 2]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+Redirected to http://localhost:3000/admins_backoffice/questions
+Completed 302 Found in 24ms (ActiveRecord: 1.0ms | Allocations: 5641)
+
+
+Started GET "/admins_backoffice/questions" for ::1 at 2022-01-26 11:29:48 -0300
+Processing by AdminsBackoffice::QuestionsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/index.html.erb within layouts/admins_backoffice
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."description" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 21], ["id", 8], ["id", 18], ["id", 7], ["id", 17]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/admins_backoffice/questions/index.html.erb:41
+  Rendered admins_backoffice/questions/index.html.erb within layouts/admins_backoffice (Duration: 12.9ms | Allocations: 4366)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 27.8ms | Allocations: 18622)
+Completed 200 OK in 31ms (Views: 27.7ms | ActiveRecord: 0.8ms | Allocations: 20211)
+
+
+Started GET "/admins_backoffice/questions/1/edit" for ::1 at 2022-01-26 11:29:51 -0300
+Processing by AdminsBackoffice::QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:51:in `set_question_id'
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/edit.html.erb within layouts/admins_backoffice
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/admins_backoffice/questions/shared/_form.html.erb:28
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 1]]
+  ↳ app/views/admins_backoffice/questions/shared/_form.html.erb:32
+  Rendered admins_backoffice/questions/_answer_fields.html.erb (Duration: 0.9ms | Allocations: 345)
+  Rendered admins_backoffice/questions/shared/_form.html.erb (Duration: 46.4ms | Allocations: 3254)
+  Rendered admins_backoffice/questions/edit.html.erb within layouts/admins_backoffice (Duration: 46.8ms | Allocations: 3357)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 59.5ms | Allocations: 17594)
+Completed 200 OK in 74ms (Views: 59.8ms | ActiveRecord: 0.7ms | Allocations: 19630)
+
+
+Started PATCH "/admins_backoffice/questions/1" for ::1 at 2022-01-26 11:30:15 -0300
+Processing by AdminsBackoffice::QuestionsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "question"=>{"description"=>"Qual a rede social que mais gera dinheiro em 2022?", "topic_id"=>"8", "answers_attributes"=>{"1643207393442"=>{"description"=>"Facebook", "correct"=>"0", "_destroy"=>"false"}, "1643207397780"=>{"description"=>"Instagram", "correct"=>"0", "_destroy"=>"false"}, "1643207401958"=>{"description"=>"TikTok", "correct"=>"1", "_destroy"=>"false"}, "1643207408494"=>{"description"=>"Youtube", "correct"=>"0", "_destroy"=>"false"}}}, "id"=>"1"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:51:in `set_question_id'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 1], ["description", "Facebook"], ["created_at", "2022-01-26 14:30:15.172785"], ["updated_at", "2022-01-26 14:30:15.172785"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mAnswer Create (0.1ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 1], ["description", "Instagram"], ["created_at", "2022-01-26 14:30:15.175743"], ["updated_at", "2022-01-26 14:30:15.175743"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "description", "correct", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 1], ["description", "TikTok"], ["correct", 1], ["created_at", "2022-01-26 14:30:15.177849"], ["updated_at", "2022-01-26 14:30:15.177849"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 1], ["description", "Youtube"], ["created_at", "2022-01-26 14:30:15.182008"], ["updated_at", "2022-01-26 14:30:15.182008"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+Redirected to http://localhost:3000/admins_backoffice/questions
+Completed 302 Found in 43ms (ActiveRecord: 6.0ms | Allocations: 11296)
+
+
+Started GET "/admins_backoffice/questions" for ::1 at 2022-01-26 11:30:15 -0300
+Processing by AdminsBackoffice::QuestionsController#index as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/index.html.erb within layouts/admins_backoffice
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."description" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 21], ["id", 8], ["id", 18], ["id", 7], ["id", 17]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/admins_backoffice/questions/index.html.erb:41
+  Rendered admins_backoffice/questions/index.html.erb within layouts/admins_backoffice (Duration: 8.1ms | Allocations: 4361)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 21.1ms | Allocations: 18617)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 0.6ms | Allocations: 20206)
+
+
+Started GET "/admins_backoffice/questions/1/edit" for ::1 at 2022-01-26 11:30:17 -0300
+Processing by AdminsBackoffice::QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:51:in `set_question_id'
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/edit.html.erb within layouts/admins_backoffice
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/admins_backoffice/questions/shared/_form.html.erb:28
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 1]]
+  ↳ app/views/admins_backoffice/questions/shared/_form.html.erb:32
+  Rendered admins_backoffice/questions/_answer_fields.html.erb (Duration: 0.6ms | Allocations: 357)
+  Rendered admins_backoffice/questions/_answer_fields.html.erb (Duration: 0.4ms | Allocations: 354)
+  Rendered admins_backoffice/questions/_answer_fields.html.erb (Duration: 0.5ms | Allocations: 355)
+  Rendered admins_backoffice/questions/_answer_fields.html.erb (Duration: 1.6ms | Allocations: 354)
+  Rendered admins_backoffice/questions/_answer_fields.html.erb (Duration: 0.8ms | Allocations: 342)
+  Rendered admins_backoffice/questions/shared/_form.html.erb (Duration: 17.9ms | Allocations: 5180)
+  Rendered admins_backoffice/questions/edit.html.erb within layouts/admins_backoffice (Duration: 18.3ms | Allocations: 5283)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 31.2ms | Allocations: 19519)
+Completed 200 OK in 42ms (Views: 32.2ms | ActiveRecord: 0.9ms | Allocations: 21555)
+
+
+Started PATCH "/admins_backoffice/questions/1" for ::1 at 2022-01-26 11:30:19 -0300
+Processing by AdminsBackoffice::QuestionsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "question"=>{"description"=>"Qual a rede social que mais gera dinheiro em 2022?", "topic_id"=>"8", "answers_attributes"=>{"0"=>{"description"=>"Facebook", "correct"=>"0", "_destroy"=>"false", "id"=>"3"}, "1"=>{"description"=>"Instagram", "correct"=>"0", "_destroy"=>"false", "id"=>"4"}, "2"=>{"description"=>"TikTok", "correct"=>"1", "_destroy"=>"false", "id"=>"5"}, "3"=>{"description"=>"Youtube", "correct"=>"0", "_destroy"=>"false", "id"=>"6"}}}, "id"=>"1"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:51:in `set_question_id'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."id" IN (?, ?, ?, ?)[0m  [["question_id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+Redirected to http://localhost:3000/admins_backoffice/questions
+Completed 302 Found in 26ms (ActiveRecord: 1.3ms | Allocations: 5944)
+
+
+Started GET "/admins_backoffice/questions" for ::1 at 2022-01-26 11:30:19 -0300
+Processing by AdminsBackoffice::QuestionsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/index.html.erb within layouts/admins_backoffice
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."description" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 21], ["id", 8], ["id", 18], ["id", 7], ["id", 17]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/admins_backoffice/questions/index.html.erb:41
+  Rendered admins_backoffice/questions/index.html.erb within layouts/admins_backoffice (Duration: 9.7ms | Allocations: 4362)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 29.2ms | Allocations: 18618)
+Completed 200 OK in 33ms (Views: 28.9ms | ActiveRecord: 0.9ms | Allocations: 20207)
+
+
+Started GET "/admins_backoffice/questions/5/edit" for ::1 at 2022-01-26 11:30:25 -0300
+Processing by AdminsBackoffice::QuestionsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:51:in `set_question_id'
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/edit.html.erb within layouts/admins_backoffice
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/admins_backoffice/questions/shared/_form.html.erb:28
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 5]]
+  ↳ app/views/admins_backoffice/questions/shared/_form.html.erb:32
+  Rendered admins_backoffice/questions/_answer_fields.html.erb (Duration: 1.6ms | Allocations: 345)
+  Rendered admins_backoffice/questions/shared/_form.html.erb (Duration: 12.2ms | Allocations: 3253)
+  Rendered admins_backoffice/questions/edit.html.erb within layouts/admins_backoffice (Duration: 12.4ms | Allocations: 3356)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 33.5ms | Allocations: 17592)
+Completed 200 OK in 44ms (Views: 33.9ms | ActiveRecord: 0.7ms | Allocations: 19627)
+
+
+Started PATCH "/admins_backoffice/questions/5" for ::1 at 2022-01-26 11:30:55 -0300
+Processing by AdminsBackoffice::QuestionsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "question"=>{"description"=>"Qual o carro SUV mais econômico?", "topic_id"=>"7", "answers_attributes"=>{"1643207426747"=>{"description"=>"Fusca", "correct"=>"0", "_destroy"=>"false"}, "1643207433717"=>{"description"=>"Tracker", "correct"=>"1", "_destroy"=>"false"}, "1643207439590"=>{"description"=>"Range Rover", "correct"=>"0", "_destroy"=>"false"}, "1643207448671"=>{"description"=>"Uno", "correct"=>"0", "_destroy"=>"false"}}}, "id"=>"5"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:51:in `set_question_id'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 5], ["description", "Fusca"], ["created_at", "2022-01-26 14:30:55.175680"], ["updated_at", "2022-01-26 14:30:55.175680"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "description", "correct", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 5], ["description", "Tracker"], ["correct", 1], ["created_at", "2022-01-26 14:30:55.178553"], ["updated_at", "2022-01-26 14:30:55.178553"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mAnswer Create (0.1ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 5], ["description", "Range Rover"], ["created_at", "2022-01-26 14:30:55.181733"], ["updated_at", "2022-01-26 14:30:55.181733"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mAnswer Create (0.1ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 5], ["description", "Uno"], ["created_at", "2022-01-26 14:30:55.184658"], ["updated_at", "2022-01-26 14:30:55.184658"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (11.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+Redirected to http://localhost:3000/admins_backoffice/questions
+Completed 302 Found in 46ms (ActiveRecord: 12.9ms | Allocations: 11923)
+
+
+Started GET "/admins_backoffice/questions" for ::1 at 2022-01-26 11:30:55 -0300
+Processing by AdminsBackoffice::QuestionsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/index.html.erb within layouts/admins_backoffice
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."description" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 21], ["id", 8], ["id", 18], ["id", 7], ["id", 17]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/admins_backoffice/questions/index.html.erb:41
+  Rendered admins_backoffice/questions/index.html.erb within layouts/admins_backoffice (Duration: 13.1ms | Allocations: 4359)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 31.5ms | Allocations: 18615)
+Completed 200 OK in 49ms (Views: 32.3ms | ActiveRecord: 0.6ms | Allocations: 20203)
+
+
+Started GET "/admins_backoffice/questions/4/edit" for ::1 at 2022-01-26 11:30:58 -0300
+Processing by AdminsBackoffice::QuestionsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:51:in `set_question_id'
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/edit.html.erb within layouts/admins_backoffice
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/admins_backoffice/questions/shared/_form.html.erb:28
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 4]]
+  ↳ app/views/admins_backoffice/questions/shared/_form.html.erb:32
+  Rendered admins_backoffice/questions/_answer_fields.html.erb (Duration: 0.8ms | Allocations: 345)
+  Rendered admins_backoffice/questions/shared/_form.html.erb (Duration: 12.2ms | Allocations: 3252)
+  Rendered admins_backoffice/questions/edit.html.erb within layouts/admins_backoffice (Duration: 12.5ms | Allocations: 3355)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 31.1ms | Allocations: 17591)
+Completed 200 OK in 37ms (Views: 31.2ms | ActiveRecord: 0.8ms | Allocations: 19626)
+
+
+Started PATCH "/admins_backoffice/questions/4" for ::1 at 2022-01-26 11:31:32 -0300
+Processing by AdminsBackoffice::QuestionsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "question"=>{"description"=>"Qual o doce mais doce que o doce de batata doce?", "topic_id"=>"17", "answers_attributes"=>{"1643207459891"=>{"description"=>"É o doce de batata doce", "correct"=>"1", "_destroy"=>"false"}, "1643207470437"=>{"description"=>"Chocolate", "correct"=>"0", "_destroy"=>"false"}, "1643207474278"=>{"description"=>"Rapadura", "correct"=>"0", "_destroy"=>"false"}, "1643207478239"=>{"description"=>"Mousse de maracujá", "correct"=>"0", "_destroy"=>"false"}}}, "id"=>"4"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:51:in `set_question_id'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "description", "correct", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 4], ["description", "É o doce de batata doce"], ["correct", 1], ["created_at", "2022-01-26 14:31:33.009937"], ["updated_at", "2022-01-26 14:31:33.009937"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mAnswer Create (0.1ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 4], ["description", "Chocolate"], ["created_at", "2022-01-26 14:31:33.013157"], ["updated_at", "2022-01-26 14:31:33.013157"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mAnswer Create (0.1ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 4], ["description", "Rapadura"], ["created_at", "2022-01-26 14:31:33.015511"], ["updated_at", "2022-01-26 14:31:33.015511"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("question_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 4], ["description", "Mousse de maracujá"], ["created_at", "2022-01-26 14:31:33.018319"], ["updated_at", "2022-01-26 14:31:33.018319"]]
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_backoffice/questions_controller.rb:28:in `update'
+Redirected to http://localhost:3000/admins_backoffice/questions
+Completed 302 Found in 30ms (ActiveRecord: 5.7ms | Allocations: 11254)
+
+
+Started GET "/admins_backoffice/questions" for ::1 at 2022-01-26 11:31:33 -0300
+Processing by AdminsBackoffice::QuestionsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/questions/index.html.erb within layouts/admins_backoffice
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."description" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 21], ["id", 8], ["id", 18], ["id", 7], ["id", 17]]
+  ↳ app/views/admins_backoffice/questions/index.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/admins_backoffice/questions/index.html.erb:41
+  Rendered admins_backoffice/questions/index.html.erb within layouts/admins_backoffice (Duration: 7.9ms | Allocations: 4361)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 20.3ms | Allocations: 18618)
+Completed 200 OK in 25ms (Views: 20.3ms | ActiveRecord: 0.5ms | Allocations: 20206)
+
+
+Started GET "/templates/vendor/fontawesome-free/css/all.min.css" for ::1 at 2022-01-26 11:59:14 -0300
+Started GET "/templates/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2022-01-26 11:59:14 -0300
+Started GET "/templates/vendor/jquery/jquery.min.js" for ::1 at 2022-01-26 11:59:14 -0300
+Started GET "/templates/css/sb-admin-2.min.css" for ::1 at 2022-01-26 11:59:14 -0300
+Started GET "/templates/js/sb-admin-2.min.js" for ::1 at 2022-01-26 11:59:14 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/templates/css/sb-admin-2.min.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/templates/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/templates/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/templates/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/templates/vendor/fontawesome-free/css/all.min.css"):
+  
+Started GET "/templates/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2022-01-26 11:59:14 -0300
+Started GET "/templates/js/demo/chart-area-demo.js" for ::1 at 2022-01-26 11:59:14 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/templates/js/demo/chart-area-demo.js"):
+  
+Started GET "/templates/img/undraw_rocket.svg" for ::1 at 2022-01-26 11:59:14 -0300
+Started GET "/templates/js/demo/chart-pie-demo.js" for ::1 at 2022-01-26 11:59:14 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/templates/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/templates/img/undraw_rocket.svg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/templates/js/demo/chart-pie-demo.js"):
+  
+Started GET "/templates/vendor/chart.js/Chart.min.js" for ::1 at 2022-01-26 11:59:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/templates/vendor/chart.js/Chart.min.js"):
+  
+Started GET "/templates/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2022-01-26 11:59:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/templates/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/templates/img/undraw_profile_2.svg" for ::1 at 2022-01-26 11:59:15 -0300
+Started GET "/templates/img/undraw_profile_1.svg" for ::1 at 2022-01-26 11:59:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/templates/img/undraw_profile_2.svg"):
+  
+Started GET "/templates/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2022-01-26 11:59:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/templates/img/undraw_profile_1.svg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/templates/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/templates/img/undraw_profile.svg" for ::1 at 2022-01-26 11:59:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/templates/img/undraw_profile.svg"):
+  
+Started GET "/templates/img/undraw_posting_photo.svg" for ::1 at 2022-01-26 11:59:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/templates/img/undraw_posting_photo.svg"):
+  
+Started GET "/templates/img/undraw_profile_3.svg" for ::1 at 2022-01-26 11:59:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/templates/img/undraw_profile_3.svg"):
+  
+Started GET "/templates/js/sb-admin-2.min.js" for ::1 at 2022-01-26 11:59:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/templates/js/sb-admin-2.min.js"):
+  
+Started GET "/templates/vendor/chart.js/Chart.min.js" for ::1 at 2022-01-26 11:59:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/templates/vendor/chart.js/Chart.min.js"):
+  
+Started GET "/templates/js/demo/chart-area-demo.js" for ::1 at 2022-01-26 11:59:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/templates/js/demo/chart-area-demo.js"):
+  
+Started GET "/templates/js/demo/chart-pie-demo.js" for ::1 at 2022-01-26 11:59:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/templates/js/demo/chart-pie-demo.js"):
+  
+Started GET "/templates/login.html" for ::1 at 2022-01-26 11:59:27 -0300
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/templates/login.html"):
+  
+Started GET "/admins_backoffice/welcome/index" for ::1 at 2022-01-26 12:34:37 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminsBackoffice::WelcomeController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/welcome/index.html.erb within layouts/admins_backoffice
+  Rendered admins_backoffice/welcome/index.html.erb within layouts/admins_backoffice (Duration: 0.8ms | Allocations: 475)
+[Webpacker] Compiling...
+Started GET "/admins_backoffice/welcome/index" for ::1 at 2022-01-26 12:34:42 -0300
+Processing by AdminsBackoffice::WelcomeController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/welcome/index.html.erb within layouts/admins_backoffice
+  Rendered admins_backoffice/welcome/index.html.erb within layouts/admins_backoffice (Duration: 0.2ms | Allocations: 76)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 7bf000510f2d938c62ac
+Version: webpack 4.46.0
+Time: 5009ms
+Built at: 01/26/2022 12:34:44 PM
+                                           Asset      Size             Chunks                         Chunk Names
+         js/admin_devise-44809ed2ceaa4e659b98.js   655 KiB       admin_devise  [emitted] [immutable]  admin_devise
+     js/admin_devise-44809ed2ceaa4e659b98.js.map   677 KiB       admin_devise  [emitted] [dev]        admin_devise
+    js/admins_backoffice-69ea51f8d0fb8fec9525.js   655 KiB  admins_backoffice  [emitted] [immutable]  admins_backoffice
+js/admins_backoffice-69ea51f8d0fb8fec9525.js.map   678 KiB  admins_backoffice  [emitted] [dev]        admins_backoffice
+          js/application-bbe76d74a8d0cec34603.js  1.06 MiB        application  [emitted] [immutable]  application
+      js/application-bbe76d74a8d0cec34603.js.map  1.12 MiB        application  [emitted] [dev]        application
+           js/gentelella-16bbbaae7af6d01b340c.js   530 KiB         gentelella  [emitted] [immutable]  gentelella
+       js/gentelella-16bbbaae7af6d01b340c.js.map   575 KiB         gentelella  [emitted] [dev]        gentelella
+           js/sb-admin-2-789398bed6fb1d11074e.js   415 KiB         sb-admin-2  [emitted] [immutable]  sb-admin-2
+       js/sb-admin-2-789398bed6fb1d11074e.js.map   399 KiB         sb-admin-2  [emitted] [dev]        sb-admin-2
+     js/users_backoffice-ce803c0d43e4bce2c5c0.js  1.35 MiB   users_backoffice  [emitted] [immutable]  users_backoffice
+ js/users_backoffice-ce803c0d43e4bce2c5c0.js.map  1.45 MiB   users_backoffice  [emitted] [dev]        users_backoffice
+                                   manifest.json  2.08 KiB                     [emitted]              
+Entrypoint admin_devise = js/admin_devise-44809ed2ceaa4e659b98.js js/admin_devise-44809ed2ceaa4e659b98.js.map
+Entrypoint admins_backoffice = js/admins_backoffice-69ea51f8d0fb8fec9525.js js/admins_backoffice-69ea51f8d0fb8fec9525.js.map
+Entrypoint application = js/application-bbe76d74a8d0cec34603.js js/application-bbe76d74a8d0cec34603.js.map
+Entrypoint gentelella = js/gentelella-16bbbaae7af6d01b340c.js js/gentelella-16bbbaae7af6d01b340c.js.map
+Entrypoint sb-admin-2 = js/sb-admin-2-789398bed6fb1d11074e.js js/sb-admin-2-789398bed6fb1d11074e.js.map
+Entrypoint users_backoffice = js/users_backoffice-ce803c0d43e4bce2c5c0.js js/users_backoffice-ce803c0d43e4bce2c5c0.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/admin_devise.js] 218 bytes {admin_devise} [built]
+[./app/javascript/packs/admins_backoffice.js] 190 bytes {admins_backoffice} [built]
+[./app/javascript/packs/application.js] 575 bytes {application} [built]
+[./app/javascript/packs/gentelella.js] 116 KiB {gentelella} {users_backoffice} [built]
+[./app/javascript/packs/sb-admin-2.js] 1.75 KiB {sb-admin-2} {admin_devise} {admins_backoffice} [built]
+[./app/javascript/packs/users_backoffice.js] 237 bytes {users_backoffice} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {users_backoffice} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {admin_devise} {admins_backoffice} {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 124 hidden modules
+
+ERROR in ./app/javascript/packs/users_backoffice.js
+Module not found: Error: Can't resolve 'jquery-2.2.4/dist/jquery.jsist/jquery' in '/home/bibiano/Documents/Kazap_curso_Ruby/ruby_on_rails/time_to_answer/app/javascript/packs'
+ @ ./app/javascript/packs/users_backoffice.js 1:0-47
+
+ERROR in ./app/javascript/packs/admin_devise.js
+Module not found: Error: Can't resolve 'jquery/dist/jquery.js' in '/home/bibiano/Documents/Kazap_curso_Ruby/ruby_on_rails/time_to_answer/app/javascript/packs'
+ @ ./app/javascript/packs/admin_devise.js 1:0-31
+
+ERROR in ./app/javascript/packs/admins_backoffice.js
+Module not found: Error: Can't resolve 'jquery/dist/jquery.js' in '/home/bibiano/Documents/Kazap_curso_Ruby/ruby_on_rails/time_to_answer/app/javascript/packs'
+ @ ./app/javascript/packs/admins_backoffice.js 1:0-31
+
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacer, 2) or calc($spacer / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+302 │ $headings-margin-bottom:      $spacer / 2 !default;
+    │                               ^^^^^^^^^^^
+    ╵
+    node_modules/bootstrap/scss/_variables.scss 302:31  @import
+    node_modules/bootstrap/scss/bootstrap.scss 9:9      root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($input-padding-y, 2) or calc($input-padding-y / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+498 │ $input-height-inner-quarter:            add($input-line-height * .25em, $input-padding-y / 2) !default;
+    │                                                                         ^^^^^^^^^^^^^^^^^^^^
+    ╵
+    node_modules/bootstrap/scss/_variables.scss 498:73  @import
+    node_modules/bootstrap/scss/bootstrap.scss 9:9      root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($custom-control-indicator-size, 2) or calc($custom-control-indicator-size / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+568 │ $custom-switch-indicator-border-radius:         $custom-control-indicator-size / 2 !default;
+    │                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ╵
+    node_modules/bootstrap/scss/_variables.scss 568:49  @import
+    node_modules/bootstrap/scss/bootstrap.scss 9:9      root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacer, 2) or calc($spacer / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+713 │ $nav-divider-margin-y:              $spacer / 2 !default;
+    │                                     ^^^^^^^^^^^
+    ╵
+    node_modules/bootstrap/scss/_variables.scss 713:37  @import
+    node_modules/bootstrap/scss/bootstrap.scss 9:9      root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacer, 2) or calc($spacer / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+718 │ $navbar-padding-y:                  $spacer / 2 !default;
+    │                                     ^^^^^^^^^^^
+    ╵
+    node_modules/bootstrap/scss/_variables.scss 718:37  @import
+    node_modules/bootstrap/scss/bootstrap.scss 9:9      root stylesheet
+
+WARNING: 64 repetitive deprecation warnings omitted.
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(20em, 16) or calc(20em / 16)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+   ╷
+12 │ $fa-fw-width:          (20em / 16);
+   │                         ^^^^^^^^^
+   ╵
+    node_modules/@fortawesome/fontawesome-free/scss/_variables.scss 12:25  @import
+    node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss 5:9   root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(4em, 3) or calc(4em / 3)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ╷
+6 │   font-size: (4em / 3);
+  │               ^^^^^^^
+  ╵
+    node_modules/@fortawesome/fontawesome-free/scss/_larger.scss 6:15     @import
+    node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss 8:9  root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(3em, 4) or calc(3em / 4)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ╷
+7 │   line-height: (3em / 4);
+  │                 ^^^^^^^
+  ╵
+    node_modules/@fortawesome/fontawesome-free/scss/_larger.scss 7:17     @import
+    node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss 8:9  root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($fa-li-width * 5, 4) or calc($fa-li-width * 5 / 4)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ╷
+6 │   margin-left: $fa-li-width * 5/4;
+  │                ^^^^^^^^^^^^^^^^^^
+  ╵
+    node_modules/@fortawesome/fontawesome-free/scss/_list.scss 6:16        @import
+    node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss 10:9  root stylesheet
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 7653.2ms | Allocations: 144668)
+Completed 200 OK in 7688ms (Views: 7659.2ms | ActiveRecord: 0.6ms | Allocations: 154963)
+
+
+[Webpacker] Compilation failed:
+Hash: 7bf000510f2d938c62ac
+Version: webpack 4.46.0
+Time: 4732ms
+Built at: 01/26/2022 12:34:47 PM
+                                           Asset      Size             Chunks                         Chunk Names
+         js/admin_devise-44809ed2ceaa4e659b98.js   655 KiB       admin_devise  [emitted] [immutable]  admin_devise
+     js/admin_devise-44809ed2ceaa4e659b98.js.map   677 KiB       admin_devise  [emitted] [dev]        admin_devise
+    js/admins_backoffice-69ea51f8d0fb8fec9525.js   655 KiB  admins_backoffice  [emitted] [immutable]  admins_backoffice
+js/admins_backoffice-69ea51f8d0fb8fec9525.js.map   678 KiB  admins_backoffice  [emitted] [dev]        admins_backoffice
+          js/application-bbe76d74a8d0cec34603.js  1.06 MiB        application  [emitted] [immutable]  application
+      js/application-bbe76d74a8d0cec34603.js.map  1.12 MiB        application  [emitted] [dev]        application
+           js/gentelella-16bbbaae7af6d01b340c.js   530 KiB         gentelella  [emitted] [immutable]  gentelella
+       js/gentelella-16bbbaae7af6d01b340c.js.map   575 KiB         gentelella  [emitted] [dev]        gentelella
+           js/sb-admin-2-789398bed6fb1d11074e.js   415 KiB         sb-admin-2  [emitted] [immutable]  sb-admin-2
+       js/sb-admin-2-789398bed6fb1d11074e.js.map   399 KiB         sb-admin-2  [emitted] [dev]        sb-admin-2
+     js/users_backoffice-ce803c0d43e4bce2c5c0.js  1.35 MiB   users_backoffice  [emitted] [immutable]  users_backoffice
+ js/users_backoffice-ce803c0d43e4bce2c5c0.js.map  1.45 MiB   users_backoffice  [emitted] [dev]        users_backoffice
+                                   manifest.json  2.08 KiB                     [emitted]              
+Entrypoint admin_devise = js/admin_devise-44809ed2ceaa4e659b98.js js/admin_devise-44809ed2ceaa4e659b98.js.map
+Entrypoint admins_backoffice = js/admins_backoffice-69ea51f8d0fb8fec9525.js js/admins_backoffice-69ea51f8d0fb8fec9525.js.map
+Entrypoint application = js/application-bbe76d74a8d0cec34603.js js/application-bbe76d74a8d0cec34603.js.map
+Entrypoint gentelella = js/gentelella-16bbbaae7af6d01b340c.js js/gentelella-16bbbaae7af6d01b340c.js.map
+Entrypoint sb-admin-2 = js/sb-admin-2-789398bed6fb1d11074e.js js/sb-admin-2-789398bed6fb1d11074e.js.map
+Entrypoint users_backoffice = js/users_backoffice-ce803c0d43e4bce2c5c0.js js/users_backoffice-ce803c0d43e4bce2c5c0.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/admin_devise.js] 218 bytes {admin_devise} [built]
+[./app/javascript/packs/admins_backoffice.js] 190 bytes {admins_backoffice} [built]
+[./app/javascript/packs/application.js] 575 bytes {application} [built]
+[./app/javascript/packs/gentelella.js] 116 KiB {gentelella} {users_backoffice} [built]
+[./app/javascript/packs/sb-admin-2.js] 1.75 KiB {sb-admin-2} {admin_devise} {admins_backoffice} [built]
+[./app/javascript/packs/users_backoffice.js] 237 bytes {users_backoffice} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {users_backoffice} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {admin_devise} {admins_backoffice} {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 124 hidden modules
+
+ERROR in ./app/javascript/packs/users_backoffice.js
+Module not found: Error: Can't resolve 'jquery-2.2.4/dist/jquery.jsist/jquery' in '/home/bibiano/Documents/Kazap_curso_Ruby/ruby_on_rails/time_to_answer/app/javascript/packs'
+ @ ./app/javascript/packs/users_backoffice.js 1:0-47
+
+ERROR in ./app/javascript/packs/admins_backoffice.js
+Module not found: Error: Can't resolve 'jquery/dist/jquery.js' in '/home/bibiano/Documents/Kazap_curso_Ruby/ruby_on_rails/time_to_answer/app/javascript/packs'
+ @ ./app/javascript/packs/admins_backoffice.js 1:0-31
+
+ERROR in ./app/javascript/packs/admin_devise.js
+Module not found: Error: Can't resolve 'jquery/dist/jquery.js' in '/home/bibiano/Documents/Kazap_curso_Ruby/ruby_on_rails/time_to_answer/app/javascript/packs'
+ @ ./app/javascript/packs/admin_devise.js 1:0-31
+
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacer, 2) or calc($spacer / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+302 │ $headings-margin-bottom:      $spacer / 2 !default;
+    │                               ^^^^^^^^^^^
+    ╵
+    node_modules/bootstrap/scss/_variables.scss 302:31  @import
+    node_modules/bootstrap/scss/bootstrap.scss 9:9      root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($input-padding-y, 2) or calc($input-padding-y / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+498 │ $input-height-inner-quarter:            add($input-line-height * .25em, $input-padding-y / 2) !default;
+    │                                                                         ^^^^^^^^^^^^^^^^^^^^
+    ╵
+    node_modules/bootstrap/scss/_variables.scss 498:73  @import
+    node_modules/bootstrap/scss/bootstrap.scss 9:9      root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($custom-control-indicator-size, 2) or calc($custom-control-indicator-size / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+568 │ $custom-switch-indicator-border-radius:         $custom-control-indicator-size / 2 !default;
+    │                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ╵
+    node_modules/bootstrap/scss/_variables.scss 568:49  @import
+    node_modules/bootstrap/scss/bootstrap.scss 9:9      root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacer, 2) or calc($spacer / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+713 │ $nav-divider-margin-y:              $spacer / 2 !default;
+    │                                     ^^^^^^^^^^^
+    ╵
+    node_modules/bootstrap/scss/_variables.scss 713:37  @import
+    node_modules/bootstrap/scss/bootstrap.scss 9:9      root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacer, 2) or calc($spacer / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+718 │ $navbar-padding-y:                  $spacer / 2 !default;
+    │                                     ^^^^^^^^^^^
+    ╵
+    node_modules/bootstrap/scss/_variables.scss 718:37  @import
+    node_modules/bootstrap/scss/bootstrap.scss 9:9      root stylesheet
+
+WARNING: 64 repetitive deprecation warnings omitted.
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(20em, 16) or calc(20em / 16)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+   ╷
+12 │ $fa-fw-width:          (20em / 16);
+   │                         ^^^^^^^^^
+   ╵
+    node_modules/@fortawesome/fontawesome-free/scss/_variables.scss 12:25  @import
+    node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss 5:9   root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(4em, 3) or calc(4em / 3)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ╷
+6 │   font-size: (4em / 3);
+  │               ^^^^^^^
+  ╵
+    node_modules/@fortawesome/fontawesome-free/scss/_larger.scss 6:15     @import
+    node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss 8:9  root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(3em, 4) or calc(3em / 4)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ╷
+7 │   line-height: (3em / 4);
+  │                 ^^^^^^^
+  ╵
+    node_modules/@fortawesome/fontawesome-free/scss/_larger.scss 7:17     @import
+    node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss 8:9  root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($fa-li-width * 5, 4) or calc($fa-li-width * 5 / 4)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ╷
+6 │   margin-left: $fa-li-width * 5/4;
+  │                ^^^^^^^^^^^^^^^^^^
+  ╵
+    node_modules/@fortawesome/fontawesome-free/scss/_list.scss 6:16        @import
+    node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss 10:9  root stylesheet
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 5901.5ms | Allocations: 20095)
+Completed 200 OK in 5908ms (Views: 5902.5ms | ActiveRecord: 1.4ms | Allocations: 22587)
+
+
+Started DELETE "/admins/sign_out" for ::1 at 2022-01-26 12:34:50 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 181ms (ActiveRecord: 0.2ms | Allocations: 407671)
+
+
+Started GET "/" for ::1 at 2022-01-26 12:34:51 -0300
+Processing by Site::WelcomeController#index as HTML
+  Rendering layout layouts/site.html.erb
+  Rendering site/welcome/index.html.erb within layouts/site
+  Rendered site/welcome/index.html.erb within layouts/site (Duration: 2.1ms | Allocations: 520)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/site.html.erb (Duration: 11.0ms | Allocations: 11218)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 11892)
+
+
+Started GET "/admins_backoffice/welcome/index" for ::1 at 2022-01-26 12:34:56 -0300
+Processing by AdminsBackoffice::WelcomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 235)
+
+
+Started GET "/admins/sign_in" for ::1 at 2022-01-26 12:34:56 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 2.9ms | Allocations: 1677)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 322.5ms | Allocations: 53307)
+Completed 200 OK in 325ms (Views: 323.8ms | ActiveRecord: 0.0ms | Allocations: 54423)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:35:20 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admins_backoffice/welcome/index
+Completed 302 Found in 250ms (ActiveRecord: 0.4ms | Allocations: 4923)
+
+
+Started GET "/admins_backoffice/welcome/index" for ::1 at 2022-01-26 12:35:20 -0300
+Processing by AdminsBackoffice::WelcomeController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/welcome/index.html.erb within layouts/admins_backoffice
+  Rendered admins_backoffice/welcome/index.html.erb within layouts/admins_backoffice (Duration: 0.2ms | Allocations: 81)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 11.3ms | Allocations: 14414)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.1ms | Allocations: 15877)
+
+
+Started DELETE "/admins/sign_out" for ::1 at 2022-01-26 12:35:24 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 1690)
+
+
+Started GET "/" for ::1 at 2022-01-26 12:35:24 -0300
+Processing by Site::WelcomeController#index as HTML
+  Rendering layout layouts/site.html.erb
+  Rendering site/welcome/index.html.erb within layouts/site
+  Rendered site/welcome/index.html.erb within layouts/site (Duration: 0.5ms | Allocations: 286)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/site.html.erb (Duration: 12.1ms | Allocations: 10803)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 11039)
+
+
+Started GET "/admins_backoffice/welcome/index" for ::1 at 2022-01-26 12:35:30 -0300
+Processing by AdminsBackoffice::WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 233)
+
+
+Started GET "/admins/sign_in" for ::1 at 2022-01-26 12:35:30 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 0.9ms | Allocations: 549)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 11.8ms | Allocations: 14113)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 14642)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:35:39 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 334)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 2.0ms | Allocations: 539)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 21.1ms | Allocations: 14116)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.0ms | Allocations: 14556)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:35:44 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 333)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 5.7ms | Allocations: 537)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 23.7ms | Allocations: 14112)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 14540)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:36:22 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 333)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 2.8ms | Allocations: 852)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 19.9ms | Allocations: 14762)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 0.0ms | Allocations: 15673)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:36:42 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 333)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 3.4ms | Allocations: 850)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 25.5ms | Allocations: 14760)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.0ms | Allocations: 15670)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:36:53 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 333)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 3.8ms | Allocations: 854)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 25.0ms | Allocations: 14765)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.0ms | Allocations: 15681)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:37:16 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 333)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 5.2ms | Allocations: 852)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 23.8ms | Allocations: 14762)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.0ms | Allocations: 15672)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:38:20 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 333)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 3.9ms | Allocations: 852)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 23.6ms | Allocations: 14762)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.0ms | Allocations: 15672)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:40:04 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 333)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 3.2ms | Allocations: 852)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 21.1ms | Allocations: 14762)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.0ms | Allocations: 15672)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:40:25 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 333)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 4.5ms | Allocations: 854)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 24.3ms | Allocations: 14764)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.0ms | Allocations: 15675)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:41:13 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 333)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 2.7ms | Allocations: 669)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 22.5ms | Allocations: 14579)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.0ms | Allocations: 15489)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:41:48 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 2ms (Allocations: 333)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 3.7ms | Allocations: 851)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 23.8ms | Allocations: 14761)
+Completed 200 OK in 29ms (Views: 27.7ms | Allocations: 15670)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:44:02 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 2ms (Allocations: 333)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 3.2ms | Allocations: 851)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 20.2ms | Allocations: 14812)
+Completed 200 OK in 24ms (Views: 23.2ms | Allocations: 15722)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:44:18 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 1ms (Allocations: 335)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 1.9ms | Allocations: 544)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 16.6ms | Allocations: 14138)
+Completed 200 OK in 18ms (Views: 17.3ms | Allocations: 14566)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:46:09 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 2ms (Allocations: 335)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 2.8ms | Allocations: 663)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 22.3ms | Allocations: 14622)
+Completed 200 OK in 27ms (Views: 25.6ms | Allocations: 15532)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:46:19 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 1ms (Allocations: 336)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 0.9ms | Allocations: 382)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 16.2ms | Allocations: 13977)
+Completed 200 OK in 18ms (Views: 16.8ms | Allocations: 14409)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:47:01 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admins_backoffice/welcome/index
+Completed 302 Found in 254ms (ActiveRecord: 1.4ms | Allocations: 4952)
+
+
+Started GET "/admins_backoffice/welcome/index" for ::1 at 2022-01-26 12:47:02 -0300
+Processing by AdminsBackoffice::WelcomeController#index as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admins_backoffice.html.erb
+  Rendering admins_backoffice/welcome/index.html.erb within layouts/admins_backoffice
+  Rendered admins_backoffice/welcome/index.html.erb within layouts/admins_backoffice (Duration: 0.4ms | Allocations: 181)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admins_backoffice.html.erb (Duration: 13.8ms | Allocations: 15308)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 0.2ms | Allocations: 17192)
+
+
+Started DELETE "/admins/sign_out" for ::1 at 2022-01-26 12:47:07 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1667)
+
+
+Started GET "/" for ::1 at 2022-01-26 12:47:07 -0300
+Processing by Site::WelcomeController#index as HTML
+  Rendering layout layouts/site.html.erb
+  Rendering site/welcome/index.html.erb within layouts/site
+  Rendered site/welcome/index.html.erb within layouts/site (Duration: 0.7ms | Allocations: 485)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/site.html.erb (Duration: 8.9ms | Allocations: 11176)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 11810)
+
+
+Started GET "/admins_backoffice/welcome/index" for ::1 at 2022-01-26 12:49:36 -0300
+Processing by AdminsBackoffice::WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 233)
+
+
+Started GET "/admins/sign_in" for ::1 at 2022-01-26 12:49:36 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 1.5ms | Allocations: 666)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 14.5ms | Allocations: 14635)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 15650)
+
+
+Started GET "/admins/sign_in" for ::1 at 2022-01-26 12:49:37 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 0.9ms | Allocations: 386)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 12.1ms | Allocations: 13952)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 14476)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:49:42 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 334)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 1.8ms | Allocations: 375)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 21.3ms | Allocations: 13969)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 14397)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:49:45 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 335)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 0.6ms | Allocations: 374)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 11.4ms | Allocations: 13968)
+Completed 200 OK in 252ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 14435)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:51:35 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 335)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 0.8ms | Allocations: 374)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 13.3ms | Allocations: 13968)
+Completed 200 OK in 264ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 14433)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:51:38 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"user@user.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "user@user.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.3ms | Allocations: 1432)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"user@user.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 0.7ms | Allocations: 375)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 11.3ms | Allocations: 13969)
+Completed 200 OK in 247ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 14434)
+
+
+Started POST "/admins/sign_in" for ::1 at 2022-01-26 12:51:44 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"user@user.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 336)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"user@user.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/admin_devise.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/admin_devise
+  Rendered admins/sessions/new.html.erb within layouts/admin_devise (Duration: 1.5ms | Allocations: 375)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin_devise.html.erb (Duration: 22.4ms | Allocations: 13969)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.0ms | Allocations: 14397)
+
+

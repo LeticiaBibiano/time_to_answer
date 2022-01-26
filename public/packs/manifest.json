@@ -1,15 +1,25 @@
 {
-  "admins_backoffice.js": "/packs/js/admins_backoffice-ff199b7f2ef59c11cae3.js",
-  "admins_backoffice.js.map": "/packs/js/admins_backoffice-ff199b7f2ef59c11cae3.js.map",
+  "admin_devise.js": "/packs/js/admin_devise-44809ed2ceaa4e659b98.js",
+  "admin_devise.js.map": "/packs/js/admin_devise-44809ed2ceaa4e659b98.js.map",
+  "admins_backoffice.js": "/packs/js/admins_backoffice-69ea51f8d0fb8fec9525.js",
+  "admins_backoffice.js.map": "/packs/js/admins_backoffice-69ea51f8d0fb8fec9525.js.map",
   "application.js": "/packs/js/application-bbe76d74a8d0cec34603.js",
   "application.js.map": "/packs/js/application-bbe76d74a8d0cec34603.js.map",
   "entrypoints": {
-    "admins_backoffice": {
+    "admin_devise": {
       "js": [
-        "/packs/js/admins_backoffice-ff199b7f2ef59c11cae3.js"
+        "/packs/js/admin_devise-44809ed2ceaa4e659b98.js"
       ],
       "js.map": [
-        "/packs/js/admins_backoffice-ff199b7f2ef59c11cae3.js.map"
+        "/packs/js/admin_devise-44809ed2ceaa4e659b98.js.map"
+      ]
+    },
+    "admins_backoffice": {
+      "js": [
+        "/packs/js/admins_backoffice-69ea51f8d0fb8fec9525.js"
+      ],
+      "js.map": [
+        "/packs/js/admins_backoffice-69ea51f8d0fb8fec9525.js.map"
       ]
     },
     "application": {
