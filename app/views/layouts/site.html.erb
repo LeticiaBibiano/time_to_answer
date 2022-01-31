@@ -1,17 +1,90 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>TimeToAnswer</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-  </head>
+    <%= stylesheet_link_tag 'site' %>
+    
+</head>
 
-  <body>
-    <h1> PÁGINA INICIAL </h1>
-    <%= yield %>
-  </body>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex flex-row-reverse">
+  <a class="navbar-brand" href="#">Time To Answer</a>
+    <form class="form-inline my-2 my-lg-0 mr-5">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Pesquisar</button>
+    </form>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <% unless user_signed_in? %>
+        <li class="mr-5 text-decoration-none"><%= link_to 'Entrar', new_user_session_path %></li>
+        <li><%= link_to 'Cadastrar-se', new_user_registration_path %></li>
+      <% else%>
+        <li class="dropdown text-reset text-decoration-none">
+          <a href="#" class="dropdown-toggle text-decoration-none" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %><span class="fa fa-hand-o-down ml-5"></span></a>
+          <ul class="dropdown-menu">
+            <li class="text-center">
+              <%= link_to users_backoffice_welcome_index_path do %>
+                  <i class="fa fa-user text-decoration-none"></i> Perfil
+              <% end %>
+            </li> 
+            <div class="border my-3"></div>
+            <li class="text-center">
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out fa-fw text-decoration-none"></i> Sair
+              <% end %>
+            </li> 
+          </ul>
+      <% end %>                    
+  </div>
+</nav>
+
+
+  <div class="jumbotron text-center">
+    <h1>Site::Welcome#index</h1>
+    <p>Find me in app/views/site/welcome/index.html.erb</p>
+    
+    <% if user_signed_in? %>
+      <p>Usuário LOGADO / <%= current_user.email %> </p>
+    <% else %>
+      <p>Usuário NÃO LOGADO</p>
+    <% end %>
+    
+    <% if admin_signed_in? %>
+      <p>Administrador LOGADO / <%= current_admin.email %> </p>
+    <% else %>
+      <p>Administrador NÃO LOGADO</p>
+    <% end %>    
+  </div>
+  <%= yield %>
+
+  <%= javascript_pack_tag 'application' %>
+  <%# <%= javascript_pack_tag 'site' %> 
+
+  <%# JS library Bootstrap Growl for notifications %>
+  <% if flash %>
+    <% flash.each do |key, value| %>
+      <%= javascript_tag do %>
+          $.bootstrapGrowl('<%= value %>', {
+          type: 'success', // (null, 'info', 'danger', 'success')
+          align: 'center', // ('left', 'right', or 'center')
+          allow_dismiss: true, // If true then will display a cross to close the popup.
+          stackup_spacing: 10 // spacing between consecutively stacked growls.
+          });
+      <% end %>
+    <% end %>
+  <% end %>
+</body>
+
 </html>

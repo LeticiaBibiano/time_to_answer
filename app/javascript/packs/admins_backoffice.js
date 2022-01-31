@@ -1,5 +1,3 @@
-import 'jquery/dist/jquery.js'
-
 import 'bootstrap/dist/js/bootstrap'
 
 import './sb-admin-2.js'

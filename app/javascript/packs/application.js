@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 
 import "bootstrap"
 import "@fortawesome/fontawesome-free/scss/fontawesome"
+import 'bootstrap-growl-ifightcrime/jquery.bootstrap-growl.js'
 import "channels"
 
 Rails.start()
