@@ -1,15 +1,15 @@
 {
-  "admins_backoffice.js": "/packs/js/admins_backoffice-73b8b2d99c96679ee573.js",
-  "admins_backoffice.js.map": "/packs/js/admins_backoffice-73b8b2d99c96679ee573.js.map",
+  "admins_backoffice.js": "/packs/js/admins_backoffice-82f735a7a97c13e798af.js",
+  "admins_backoffice.js.map": "/packs/js/admins_backoffice-82f735a7a97c13e798af.js.map",
   "application.js": "/packs/js/application-d114797b24293e029f83.js",
   "application.js.map": "/packs/js/application-d114797b24293e029f83.js.map",
   "entrypoints": {
     "admins_backoffice": {
       "js": [
-        "/packs/js/admins_backoffice-73b8b2d99c96679ee573.js"
+        "/packs/js/admins_backoffice-82f735a7a97c13e798af.js"
       ],
       "js.map": [
-        "/packs/js/admins_backoffice-73b8b2d99c96679ee573.js.map"
+        "/packs/js/admins_backoffice-82f735a7a97c13e798af.js.map"
       ]
     },
     "application": {
@@ -38,10 +38,10 @@
     },
     "users_backoffice": {
       "js": [
-        "/packs/js/users_backoffice-a4047e9c284a97063f6a.js"
+        "/packs/js/users_backoffice-e546af8dffcc7fee973f.js"
       ],
       "js.map": [
-        "/packs/js/users_backoffice-a4047e9c284a97063f6a.js.map"
+        "/packs/js/users_backoffice-e546af8dffcc7fee973f.js.map"
       ]
     }
   },
@@ -49,6 +49,6 @@
   "gentelella.js.map": "/packs/js/gentelella-5260954fdb6ffcfab773.js.map",
   "sb-admin-2.js": "/packs/js/sb-admin-2-b22b2d5f921cbe8c1331.js",
   "sb-admin-2.js.map": "/packs/js/sb-admin-2-b22b2d5f921cbe8c1331.js.map",
-  "users_backoffice.js": "/packs/js/users_backoffice-a4047e9c284a97063f6a.js",
-  "users_backoffice.js.map": "/packs/js/users_backoffice-a4047e9c284a97063f6a.js.map"
+  "users_backoffice.js": "/packs/js/users_backoffice-e546af8dffcc7fee973f.js",
+  "users_backoffice.js.map": "/packs/js/users_backoffice-e546af8dffcc7fee973f.js.map"
 }
