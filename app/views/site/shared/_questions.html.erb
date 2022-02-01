@@ -1,0 +1,18 @@
+<% @questions.each do |question| %>
+    <div class="card border-dark mb-3">
+      <div class="card-header"><%= question.description %></div>
+      <div class="card-body text-dark">
+        <h5 class="card-title">
+          <ul>
+            <% question.answers.each do |answer|%>
+              <li><%= answer.description %></li>
+            <% end %>
+          </ul>
+        </h5>
+      </div>
+    </div>
+<% end %>  
+
+<div class="align-self-center">
+  <%= paginate @questions %>
+</div>
