@@ -5,7 +5,14 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
 
   def index
     # Making Question recognize topics {.include(:topic)}
-    @questions = Question.includes(:topic).order(:description).page(params[:page]).per(5)
+    @questions =
+      Question
+        .includes(:topic)
+        .where(conditions_hash)
+        .where(conditions_date)
+        .order(:description)
+        .page(params[:page])
+        .per(5)
   end
 
   def new
@@ -16,18 +23,18 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
     @question = Question.new(params_question_permited)
     if @question.save
       redirect_to admins_backoffice_questions_path, notice: "Pergunta cadastrado com sucesso!"
-    else 
+    else
       render :new
-    end    
+    end
   end
 
-  def edit    
+  def edit
   end
 
-  def update       
+  def update
     if @question.update(params_question_permited)
       redirect_to admins_backoffice_questions_path, notice: "Pergunta atualizado com sucesso!"
-    else 
+    else
       render :edit
     end
   end
@@ -35,7 +42,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   def destroy
     if @question.destroy
       redirect_to admins_backoffice_questions_path, notice: "Pergunta removida!"
-    else 
+    else
       render :index
     end
   end
@@ -43,7 +50,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   private
 
   def params_question_permited
-    params.require(:question).permit(:description, :topic_id, 
+    params.require(:question).permit(:description, :topic_id,
       answer_attributes: [:id, :description, :correct, :_destroy])
   end
 
@@ -55,5 +62,17 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
     @topics = Topic.all
   end
 
+  def conditions_hash
+    {}.tap do |hash|
+      hash[:topic_id] = params[:topic_id] if params[:topic_id].present?
+    end
+  end
+
+  def conditions_date
+    conditions = []
+    conditions << "created_at >= '#{params[:initial_date].to_date}'" if params[:initial_date].present?
+    conditions << "created_at <= '#{params[:final_date].to_date}'" if params[:final_date].present?
+    conditions.join(' AND ')
+  end
 end
 
