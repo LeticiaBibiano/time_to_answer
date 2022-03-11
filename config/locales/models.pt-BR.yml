@@ -1,11 +1,11 @@
 'pt-BR':
   activerecord:
     models:
-      admin: 
-        one: Administrador          
-        other: Administradores 
-      user: 
-        one: Usuário          
+      admin:
+        one: Administrador
+        other: Administradores
+      user:
+        one: Usuário
         other: Usuários
       topic:
         one: Tópico/Assunto
@@ -18,7 +18,7 @@
         id: Código
         password: Senha
         password_confirmation: Confirme a Senha
-      user: 
+      user:
         id: Código
       topic:
         id: Código
@@ -28,4 +28,8 @@
         description: Descrição
         topic: Tópico/Assunto
         topic_id: Tópic/Assunto
-        
+  activemodel:
+    attributes:
+      topic_form:
+        initial_date: Data inicial
+        final_date: Data final
