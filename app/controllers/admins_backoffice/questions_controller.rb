@@ -5,14 +5,26 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
 
   def index
     # Making Question recognize topics {.include(:topic)}
-    @questions =
-      Question
-        .includes(:topic)
-        .where(conditions_hash)
-        .where(conditions_date)
-        .order(:description)
-        .page(params[:page])
-        .per(5)
+    @topic_form = TopicForm.new(form_params)
+    if @topic_form.valid?
+      @questions =
+        Question
+          .includes(:topic)
+          .where(conditions_hash)
+          .where(conditions_date)
+          .order(:description)
+          .page(params[:page])
+          .per(5)
+    else
+      @questions =
+        Question
+          .includes(:topic)
+          .order(:description)
+          .page(params[:page])
+          .per(5)
+      flash[:notice] = 'Campos inválidos. Tente novamente'
+      render :index
+    end
   end
 
   def new
@@ -64,15 +76,19 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
 
   def conditions_hash
     {}.tap do |hash|
-      hash[:topic_id] = params[:topic_id] if params[:topic_id].present?
+      hash[:topic_id] = form_params[:topic_id] if form_params[:topic_id].present?
     end
   end
 
   def conditions_date
     conditions = []
-    conditions << "created_at >= '#{params[:initial_date].to_date}'" if params[:initial_date].present?
-    conditions << "created_at <= '#{params[:final_date].to_date}'" if params[:final_date].present?
+    conditions << "created_at >= '#{form_params[:initial_date].to_date}'" if form_params[:initial_date].present?
+    conditions << "created_at <= '#{form_params[:final_date].to_date}'" if form_params[:final_date].present?
     conditions.join(' AND ')
+  end
+
+  def form_params
+    params.fetch(:topic_form, {})
   end
 end
 
