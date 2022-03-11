@@ -1,84 +1,84 @@
 {
-  "admin_devise.js": "/packs/js/admin_devise-ec99f64a254ead6d23a6.js",
-  "admin_devise.js.map": "/packs/js/admin_devise-ec99f64a254ead6d23a6.js.map",
-  "admins_backoffice.js": "/packs/js/admins_backoffice-c16d516bb05685e5b97b.js",
-  "admins_backoffice.js.map": "/packs/js/admins_backoffice-c16d516bb05685e5b97b.js.map",
-  "application.js": "/packs/js/application-2fa9bb469dd8d5f69f45.js",
-  "application.js.map": "/packs/js/application-2fa9bb469dd8d5f69f45.js.map",
+  "admin_devise.js": "/packs/js/admin_devise-c17f064ccb895822684e.js",
+  "admin_devise.js.map": "/packs/js/admin_devise-c17f064ccb895822684e.js.map",
+  "admins_backoffice.js": "/packs/js/admins_backoffice-d15b6b43a803800eb408.js",
+  "admins_backoffice.js.map": "/packs/js/admins_backoffice-d15b6b43a803800eb408.js.map",
+  "application.js": "/packs/js/application-1d2dde208875f5b151fd.js",
+  "application.js.map": "/packs/js/application-1d2dde208875f5b151fd.js.map",
   "entrypoints": {
     "admin_devise": {
       "js": [
-        "/packs/js/admin_devise-ec99f64a254ead6d23a6.js"
+        "/packs/js/admin_devise-c17f064ccb895822684e.js"
       ],
       "js.map": [
-        "/packs/js/admin_devise-ec99f64a254ead6d23a6.js.map"
+        "/packs/js/admin_devise-c17f064ccb895822684e.js.map"
       ]
     },
     "admins_backoffice": {
       "js": [
-        "/packs/js/admins_backoffice-c16d516bb05685e5b97b.js"
+        "/packs/js/admins_backoffice-d15b6b43a803800eb408.js"
       ],
       "js.map": [
-        "/packs/js/admins_backoffice-c16d516bb05685e5b97b.js.map"
+        "/packs/js/admins_backoffice-d15b6b43a803800eb408.js.map"
       ]
     },
     "application": {
       "js": [
-        "/packs/js/application-2fa9bb469dd8d5f69f45.js"
+        "/packs/js/application-1d2dde208875f5b151fd.js"
       ],
       "js.map": [
-        "/packs/js/application-2fa9bb469dd8d5f69f45.js.map"
+        "/packs/js/application-1d2dde208875f5b151fd.js.map"
       ]
     },
     "gentelella": {
       "js": [
-        "/packs/js/gentelella-16bbbaae7af6d01b340c.js"
+        "/packs/js/gentelella-6d1dd5fd30e34d73ead4.js"
       ],
       "js.map": [
-        "/packs/js/gentelella-16bbbaae7af6d01b340c.js.map"
+        "/packs/js/gentelella-6d1dd5fd30e34d73ead4.js.map"
       ]
     },
     "sb-admin-2": {
       "js": [
-        "/packs/js/sb-admin-2-789398bed6fb1d11074e.js"
+        "/packs/js/sb-admin-2-2d3aaefa0da79caf9a6d.js"
       ],
       "js.map": [
-        "/packs/js/sb-admin-2-789398bed6fb1d11074e.js.map"
+        "/packs/js/sb-admin-2-2d3aaefa0da79caf9a6d.js.map"
       ]
     },
     "site": {
       "js": [
-        "/packs/js/site-180f249052432fe8de6d.js"
+        "/packs/js/site-359c44bf8e992325c7d6.js"
       ],
       "js.map": [
-        "/packs/js/site-180f249052432fe8de6d.js.map"
+        "/packs/js/site-359c44bf8e992325c7d6.js.map"
       ]
     },
     "user_devise": {
       "js": [
-        "/packs/js/user_devise-2383283bb23f9df46bad.js"
+        "/packs/js/user_devise-7ef1873d70f565565ca5.js"
       ],
       "js.map": [
-        "/packs/js/user_devise-2383283bb23f9df46bad.js.map"
+        "/packs/js/user_devise-7ef1873d70f565565ca5.js.map"
       ]
     },
     "users_backoffice": {
       "js": [
-        "/packs/js/users_backoffice-ce803c0d43e4bce2c5c0.js"
+        "/packs/js/users_backoffice-167d3906b800450a4838.js"
       ],
       "js.map": [
-        "/packs/js/users_backoffice-ce803c0d43e4bce2c5c0.js.map"
+        "/packs/js/users_backoffice-167d3906b800450a4838.js.map"
       ]
     }
   },
-  "gentelella.js": "/packs/js/gentelella-16bbbaae7af6d01b340c.js",
-  "gentelella.js.map": "/packs/js/gentelella-16bbbaae7af6d01b340c.js.map",
-  "sb-admin-2.js": "/packs/js/sb-admin-2-789398bed6fb1d11074e.js",
-  "sb-admin-2.js.map": "/packs/js/sb-admin-2-789398bed6fb1d11074e.js.map",
-  "site.js": "/packs/js/site-180f249052432fe8de6d.js",
-  "site.js.map": "/packs/js/site-180f249052432fe8de6d.js.map",
-  "user_devise.js": "/packs/js/user_devise-2383283bb23f9df46bad.js",
-  "user_devise.js.map": "/packs/js/user_devise-2383283bb23f9df46bad.js.map",
-  "users_backoffice.js": "/packs/js/users_backoffice-ce803c0d43e4bce2c5c0.js",
-  "users_backoffice.js.map": "/packs/js/users_backoffice-ce803c0d43e4bce2c5c0.js.map"
+  "gentelella.js": "/packs/js/gentelella-6d1dd5fd30e34d73ead4.js",
+  "gentelella.js.map": "/packs/js/gentelella-6d1dd5fd30e34d73ead4.js.map",
+  "sb-admin-2.js": "/packs/js/sb-admin-2-2d3aaefa0da79caf9a6d.js",
+  "sb-admin-2.js.map": "/packs/js/sb-admin-2-2d3aaefa0da79caf9a6d.js.map",
+  "site.js": "/packs/js/site-359c44bf8e992325c7d6.js",
+  "site.js.map": "/packs/js/site-359c44bf8e992325c7d6.js.map",
+  "user_devise.js": "/packs/js/user_devise-7ef1873d70f565565ca5.js",
+  "user_devise.js.map": "/packs/js/user_devise-7ef1873d70f565565ca5.js.map",
+  "users_backoffice.js": "/packs/js/users_backoffice-167d3906b800450a4838.js",
+  "users_backoffice.js.map": "/packs/js/users_backoffice-167d3906b800450a4838.js.map"
 }

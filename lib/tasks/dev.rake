@@ -41,4 +41,37 @@ namespace :dev do
     )
   end
 
+
+  desc "Adiciona perguntas e respostas"
+  task add_answers_and_questions: :environment do
+    Topic.all.each do |topic|
+      rand(5..10).times do |i|
+        params = create_questions_params(topic)
+        answers_array = params[:question][:answers_attributes]
+        add_answers(answers_array)
+        Question.create!(params[:question])
+      end
+    end
+  end
+
+  private
+
+  def create_questions_params(topic = Topic.all.sample)
+    { question: {
+      description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
+      topic: topic,
+      answers_attributes: []
+      }
+    }
+  end
+
+  def create_answer_params(correct = false)
+    { description: Faker::Lorem.sentence, correct: correct }
+  end
+
+  def add_answers(answers_array = [])
+    rand(2..5).times do |j|
+      answers_array.push(create_answer_params)
+    end
+  end
 end

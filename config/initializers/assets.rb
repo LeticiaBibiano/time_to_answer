@@ -21,10 +21,7 @@ Rails.application.config.assets.precompile += %w( admins_backoffice.js admins_ba
 
 #/lib/assets
 Rails.application.config.assets.precompile += %w( sb-admin-2.js sb-admin.css
-                                                  gentelella.js 
+                                                  gentelella.js
                                                   gentelella.min.css gentelella.min.js
                                                   img.jpg )
 
-#/vendor/assets
-# Rails.application.config.assets.precompile += %w( jquery-2.2.4/dist/jquery.jsist/jquery.js )
-                                                 
