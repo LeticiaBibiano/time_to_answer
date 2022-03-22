@@ -12,6 +12,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
           .includes(:topic)
           .where(conditions_hash)
           .where(conditions_date)
+          .where("description LIKE '%#{form_params[:description]}%'")
           .order(:description)
           .page(params[:page])
           .per(5)

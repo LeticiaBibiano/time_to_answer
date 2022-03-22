@@ -1,6 +1,7 @@
 class TopicForm
   include ActiveAttr::Model
 
+  attribute :description
   attribute :topic_id
   attribute :initial_date
   attribute :final_date
